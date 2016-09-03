@@ -1,4 +1,4 @@
-# The_Creeper
+# The Creeper
 Find all subdomains, ip addresses and dns of a domain.
 
 ##Installation:
