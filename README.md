@@ -14,10 +14,27 @@ Maybe some of you will need to use sudo.
 
 All set, you are ready to go. Run the script as following:
 
-```python main.py -d [domain] -w [wordlist]```
+```
+usage: main.py [-h] -d DOMAIN -w WORDLIST [-t THREADS] [-v] [--version]
+optional arguments:
+  -h, --help            show this help message and exit
+  -d DOMAIN, --domain DOMAIN
+                        The domain you want to explore. For ex. google.com
+  -w WORDLIST, --wordlist WORDLIST
+                        The Subdomains wordlist
+  -t THREADS, --threads THREADS
+                        Number of threads (must be larger than 0. default: 3)
+  -v, --verbose         Set verbosity
+  --version             show program's version number and exit
+```
+
+For example:
+```
+python main.py -d youtube.com -w huge -t 7
+```
 
 
 
 ##Legally:
-This script has been made for legal use. Everything you are about to do with this tool, is on your responsebility.
+This script has been made for legal use and for fun. Everything you are about to do with this tool, is on your responsebility.
 
