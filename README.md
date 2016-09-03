@@ -15,17 +15,15 @@ Maybe some of you will need to use sudo.
 All set, you are ready to go. Run the script as following:
 
 ```
-usage: main.py [-h] -d DOMAIN -w WORDLIST [-t THREADS] [-v] [--version]
+usage: main.py [-h] -d  -w  [-t] [-v] [--version]
+
 optional arguments:
-  -h, --help            show this help message and exit
-  -d DOMAIN, --domain DOMAIN
-                        The domain you want to explore. For ex. google.com
-  -w WORDLIST, --wordlist WORDLIST
-                        The Subdomains wordlist
-  -t THREADS, --threads THREADS
-                        Number of threads (must be larger than 0. default: 3)
-  -v, --verbose         Set verbosity
-  --version             show program's version number and exit
+  -h, --help        show this help message and exit
+  -d , --domain     The domain you want to explore. For ex. google.com
+  -w , --wordlist   The Subdomains wordlist
+  -t , --threads    Number of threads (must be larger than 0. default: 3)
+  -v, --verbose     Set verbosity
+  --version         show program's version number and exit
 ```
 
 For example:
