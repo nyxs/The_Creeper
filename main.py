@@ -193,9 +193,9 @@ def restart():
 def start():
 	
 	parser = argparse.ArgumentParser()
-	parser.add_argument('-d', '--domain', action='store', required=True, dest='domain', help='The domain you want to explore. For ex. google.com')
-	parser.add_argument('-w', '--wordlist', action='store', required=True, dest='wordlist', help='The Subdomains wordlist')
-	parser.add_argument('-t', '--threads', action='store', default=3, dest='threads', type=int, help='Number of threads (must be larger than 0. default: 3)')
+	parser.add_argument('-d', '--domain', action='store', metavar='', required=True, dest='domain', help='The domain you want to explore. For ex. google.com')
+	parser.add_argument('-w', '--wordlist', action='store', metavar='', required=True, dest='wordlist', help='The Subdomains wordlist')
+	parser.add_argument('-t', '--threads', action='store', metavar='', default=3, dest='threads', type=int, help='Number of threads (must be larger than 0. default: 3)')
 	parser.add_argument('-v', '--verbose', action='store_true', default=False, dest='verbose', help='Set verbosity')
 	parser.add_argument('--version', dest='version', default="2.0", action='version', version='%(prog)s 2.0')
 
