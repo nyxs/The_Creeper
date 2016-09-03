@@ -30,7 +30,7 @@ optional arguments:
 
 For example:
 ```
-python main.py -d youtube.com -w huge -t 7
+sudo python main.py -d youtube.com -w huge -t 7
 ```
 
 
