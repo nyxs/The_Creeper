@@ -28,7 +28,7 @@ optional arguments:
 
 For example:
 ```
-sudo python main.py -d youtube.com -w huge -t 7
+sudo python main.py -d youtube.com -w huge_wordlist.txt -t 7
 ```
 
 
