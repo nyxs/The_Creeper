@@ -31,6 +31,9 @@ For example:
 sudo python main.py -d youtube.com -w huge_wordlist.txt -t 7
 ```
 
+##To do:
+1. Add list of open ports for each IP.
+2. Add Banner grabbing.
 
 
 ##Legally:
