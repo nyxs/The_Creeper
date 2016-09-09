@@ -78,7 +78,7 @@ def adds_if_not_exists(the_ip, the_domain="", dns="", the_port="", flag=""):
 					else: #the port is already exist
 						if not flag in val:
 							sum_dict[the_ip]['Ports'][the_port] += ", " + flag
-							print "[" + Colors.GREEN + "+" + Colors.RESET + "]" + Colors.GREEN + " The prot: " + the_port + " now got the flag " flag + " on " + the_ip + "\n" + Colors.RESET
+							print "[" + Colors.GREEN + "+" + Colors.RESET + "]" + Colors.GREEN + " The prot: " + the_port + " now got the flag " + flag + " on " + the_ip + "\n" + Colors.RESET
 
 			if not dns == "":
 				for d in dns:
