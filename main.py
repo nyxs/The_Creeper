@@ -167,34 +167,34 @@ def get_hosts(current_ip, minimum, maximum):
 
 def start_threads_for_port_scanning(ip):
 	print "[" + Colors.MAGENTA + "!" + Colors.RESET + "]" + Colors.MAGENTA + " Working on " + ip + Colors.RESET
-		list_of_threads = []
-		thread_counter = 0
-		num_of_ports = 65536
+	list_of_threads = []
+	thread_counter = 0
+	num_of_ports = 65536
 
-		if threads > 1:
-			num_ports_for_thread = num_of_ports / threads
-			num_of_ports_for_last_thread = num_of_ports - (num_ports_for_thread * (threads - 1))
+	if threads > 1:
+		num_ports_for_thread = num_of_ports / threads
+		num_of_ports_for_last_thread = num_of_ports - (num_ports_for_thread * (threads - 1))
 
-			for thread_counter in range(1, threads):
-				exec("thread%d = myThread(func=\"get ports\", minimum=(thread_counter-1)*num_ports_for_thread, maximum=thread_counter*num_ports_for_thread, ip=ip)" % (thread_counter))
-				exec("thread%d.start()" % (thread_counter))
-				exec("list_of_threads.append(thread%d)" % (thread_counter))
+		for thread_counter in range(1, threads):
+			exec("thread%d = myThread(func=\"get ports\", minimum=(thread_counter-1)*num_ports_for_thread, maximum=thread_counter*num_ports_for_thread, ip=ip)" % (thread_counter))
+			exec("thread%d.start()" % (thread_counter))
+			exec("list_of_threads.append(thread%d)" % (thread_counter))
 
-			if num_of_ports_for_last_thread > 0:
-				thread_counter += 1
-				# last thread handling
-				exec("thread%d = myThread(func=\"get ports\", minimum=number_of_subs - num_of_ports_for_last_thread, maximum=number_of_subs, ip=ip)" % (thread_counter))
-				exec("thread%d.start()" % (thread_counter))
-				exec("list_of_threads.append(thread%d)" % (thread_counter))
-		else:
-			num_ports_for_thread = num_of_ports
-			for thread_counter in range(1, threads + 1):
-				exec("thread%d = myThread(func=\"get ports\", minimum=(thread_counter-1)*num_ports_for_thread, maximum=thread_counter*num_ports_for_thread, ip=ip)" % (thread_counter))
-				exec("thread%d.start()" % (thread_counter))
-				exec("list_of_threads.append(thread%d)" % (thread_counter))
+		if num_of_ports_for_last_thread > 0:
+			thread_counter += 1
+			# last thread handling
+			exec("thread%d = myThread(func=\"get ports\", minimum=number_of_subs - num_of_ports_for_last_thread, maximum=number_of_subs, ip=ip)" % (thread_counter))
+			exec("thread%d.start()" % (thread_counter))
+			exec("list_of_threads.append(thread%d)" % (thread_counter))
+	else:
+		num_ports_for_thread = num_of_ports
+		for thread_counter in range(1, threads + 1):
+			exec("thread%d = myThread(func=\"get ports\", minimum=(thread_counter-1)*num_ports_for_thread, maximum=thread_counter*num_ports_for_thread, ip=ip)" % (thread_counter))
+			exec("thread%d.start()" % (thread_counter))
+			exec("list_of_threads.append(thread%d)" % (thread_counter))
 
-		for t in list_of_threads:
-			t.join()
+	for t in list_of_threads:
+		t.join()
 
 def scan_ports(dst_ip, min_port, max_port):
 	for port in range(min_port, max_port):
