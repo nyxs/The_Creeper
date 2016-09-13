@@ -183,7 +183,7 @@ def start_threads_for_port_scanning(ip):
 		if num_of_ports_for_last_thread > 0:
 			thread_counter += 1
 			# last thread handling
-			exec("thread%d = myThread(func=\"get ports\", minimum=number_of_subs - num_of_ports_for_last_thread, maximum=number_of_subs, ip=ip)" % (thread_counter))
+			exec("thread%d = myThread(func=\"get ports\", minimum=num_of_ports - num_of_ports_for_last_thread, maximum=num_of_ports, ip=ip)" % (thread_counter))
 			exec("thread%d.start()" % (thread_counter))
 			exec("list_of_threads.append(thread%d)" % (thread_counter))
 	else:
